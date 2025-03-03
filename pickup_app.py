@@ -6,7 +6,7 @@ import numpy as np
 # Load the trained CatBoost model
 model = pickle.load(open("model_pickup.pkl", "rb"))
 
-st.title("Pickup ETA Prediction with CatBoost")
+st.title("ETA Prediction of Pickup")
 st.write("Enter details to predict the Estimated Time of Arrival (ETA) for pickup.")
 
 # Input fields
