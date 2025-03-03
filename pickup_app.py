@@ -26,11 +26,9 @@ pickup_hour = st.number_input("Pickup Hour", value=0)
 pickup_day_of_week = st.number_input("Pickup Day of Week", value=0)
 pickup_distance = st.number_input("Pickup Distance", value=0.0)
 log_pickup_distance = st.number_input("Log Pickup Distance", value=0.0)
-pca1 = st.number_input("PCA1", value=0.0)
-pca2 = st.number_input("PCA2", value=0.0)
 
 # Prediction
 if st.button("Predict ETA"):
-    input_features = np.array([[region_id, courier_id, lng, lat, aoi_id, aoi_type, pickup_gps_lng, pickup_gps_lat, accept_gps_lng, accept_gps_lat,accept_hour_of_day, accept_day_of_week, pickup_hour, pickup_day_of_week, pickup_distance, log_pickup_distance, pca1, pca2]])
+    input_features = np.array([[region_id, courier_id, lng, lat, aoi_id, aoi_type, pickup_gps_lng, pickup_gps_lat, accept_gps_lng, accept_gps_lat,accept_hour_of_day, accept_day_of_week, pickup_hour, pickup_day_of_week, pickup_distance, log_pickup_distance]])
     prediction = model.predict(input_features)
     st.success(f"Predicted ETA: {prediction[0]:.2f} minutes")
